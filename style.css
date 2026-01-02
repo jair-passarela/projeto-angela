@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #1c1c1c 0%,
+    #2b2b2b 40%,
+    #3a2f2f 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.container {
+  background: linear-gradient(
+    180deg,
+    rgba(25, 25, 30, 0.85),
+    rgba(45, 30, 35, 0.85)
+  );
+  color: #f5f5f5;
+
+  border-radius: 26px;
+  padding: 30px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+img,
+video {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+/* TEXTO */
+.frase {
+  font-family: 'Dancing Script', cursive;
+  font-style: italic;
+  color: #e6e2e2; /* off-white quente, fácil de ler */
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+/* destaque romântico */
+.frase span {
+  color: #ff8b8b; /* rosé suave */
+  font-weight: 600;
+  font-size: 1.18em;
+}
+/* 📱 celular */
+@media (max-width: 768px) {
+  .frase {
+    font-size: 1.6rem;
+    line-height: 2;
+  }
+}
+
+/* 💻 desktop */
+@media (min-width: 769px) {
+  .frase {
+    font-size: 2rem;
+    line-height: 2.3;
+  }
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: #ff5a5f;
+  color: white;
+  border-radius: 16px;
+  font-size: 17px;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: default;
+}
+.fade {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
